@@ -1,0 +1,13 @@
+{
+  "name": "LtkConsultas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/service",
+      "proxyUrl": "http://w260066.ferozo.com/ltkconsultas/service"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+   <ion-title>hola {{usuarioNombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngIf="conexiones?.length > 0">
+  <ion-title>conexiones </ion-title>
+    <div  *ngFor="let conexion of conexiones  " >    
+      <br> 
+      <button  (click)="irConsultas(conexion[0])" ><!-- ID -->
+        {{conexion[1]}} <!-- NOMBRE -->
+      </button> 
+    </div> 
+  </div> 
+<div *ngIf="links?.length > 0">
+    <ion-title>links</ion-title>
+    <div  *ngFor="let link of links" >    
+      <br> 
+          <button  (click)="irLink(link[2])" >
+        
+        {{link[1]}} 
+      </button>  
+    </div> 
+  </div> 
+</ion-content>

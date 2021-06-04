@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>desglose</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let row of desglose ; let i = index " >      
+    
+      <ion-col *ngFor="let col of row | keyvalue ">
+        <ion-label position="floating">{{col.key}}</ion-label>:
+        <ion-label position="floating">{{col.value}}</ion-label>
+      </ion-col>        
+  </ion-row>
+  </ion-grid> 
+</ion-content>

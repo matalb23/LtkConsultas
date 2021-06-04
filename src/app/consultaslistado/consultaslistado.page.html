@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-title>Consultas</ion-title>
+  <div  *ngFor="let consulta of consultas  " >    
+    <br> 
+     <button  (click)="irConsulta(consulta[0])" ><!-- ID -->
+      {{consulta[1]}} <!-- NOMBRE -->
+    </button> 
+  </div> 
+<div *ngIf="links?.length > 0">
+    <ion-title>links</ion-title>
+    <div  *ngFor="let link of links" >    
+      <br> 
+          <button  (click)="irLink(link[2])" >
+        
+        {{link[1]}} 
+      </button>  
+    </div> 
+  </div> 
+
+</ion-content>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LtkConsultas</string>
+    <string name="title_activity_main">LtkConsultas</string>
+    <string name="package_name">com.latikait.listados.mobile</string>
+    <string name="custom_url_scheme">com.latikait.listados.mobile</string>
+</resources>

@@ -1,0 +1,38 @@
+
+
+<ion-content>
+  <ion-title>Consultas</ion-title>
+  <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()" class="cuerpo">
+    <div *ngFor="let form_elem of filtros">
+      
+      <ion-label class="labels-template">{{form_elem[4]}}</ion-label>
+    <div [ngSwitch]="form_elem[2]">
+       <div *ngSwitchCase="'2'" style="margin-bottom: 15px;">
+        <input class="input-template" type="text" formControlName="{{form_elem[3]}}_{{form_elem[2]}}"/>
+      </div>
+      <div *ngSwitchCase="'1'" style="margin-bottom: 15px;">
+        <input class="input-template" type="number" formControlName="{{form_elem[3]}}_{{form_elem[2]}}"/>
+       </div> 
+    </div>  
+    </div>
+    <input type="submit" class="" value="Actualizar"/>
+    <br/>
+    <br/>
+  </form>
+    <ion-grid>
+    <ion-row *ngFor="let row of select.datos ; let i = index " >      
+      <ion-col *ngFor="let col of row | keyvalue ">
+        <ion-label position="floating">{{col.key}}</ion-label>:
+        <ion-label position="floating">{{col.value}}</ion-label>
+      </ion-col>        
+      <div *ngIf="select.columnaDesglose!=''">        
+        <ion-col>
+        <button ion-button (click) ="desglose(select.columnaDesglose,row[select.columnaDesglose]);"  >
+        Desglose
+        </button>
+      </ion-col>
+      </div>
+
+  </ion-row>
+  </ion-grid>   
+</ion-content>

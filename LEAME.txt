@@ -1,0 +1,78 @@
+https://devdactic.com/push-notifications-ionic-capacitor/
+ionic integrations enable capacitor
+
+npm run build
+
+npm install @capacitor/android
+npx cap add android
+https://capacitorjs.com/docs/cordova/migrating-from-cordova-to-capacitor
+
+npm install @capacitor/core @capacitor/cli
+
+
+npx cap sync [android | ios]
+
+
+
+
+
+
+
+Instead of "public class FileProvider extends android.support.v4.content.FileProvider" 
+replace it with "public class FileProvider extends androidx.core.content.FileProvider".
+
+npm install @capacitor/android@3.0.0-beta.3
+better install like this npm install @capacitor/android@next
+It will install latest v3, which it’s RC.0 at the moment, so beta 3 is very old
+(and do it for all the other packages, cli, core and ios)
+
+
+
+npx cap sync
+npx cap open android
+
+ESTE ME FUNCIONA
+ionic capacitor run android -l --external 
+
+
+chrome://inspect/#devices
+http://apptkweb.latikait.com.ar/pdf_tk?par_tk=191
+
+
+
+PARA ELECTRON; AUN NO LO INSTALE
+
+Install it using:
+
+# for use in npm scripts
+npm install electron-packager --save-dev
+
+# for use from cli
+npm install electron-packager -g
+And package or deploy using:
+
+electron-packager <sourcedir> <appname> --platform=win32 --arch=x86_64
+
+
+
+
+
+delete node_modules folder
+delete platforms folder
+edit config.xml and remove platform entries
+npm i
+ionic cordova platform add android
+
+
+/*//
+I had a similar issue I think, and found out it was because of AndroidX plugins. Here is what worked for me :
+
+ionic cordova plugin add cordova-plugin-androidx
+ionic cordova plugin add cordova-plugin-androidx-adapter
+Simply adding these plugins removed any build error.
+
+Also, if you're still using the original firebase plugin you should replace it with one of the fixed forks : https://github.com/wizpanda/cordova-plugin-firebase-lib or https://github.com/dpa99c/cordova-plugin-firebase
+
+And cordova clean android then rebuild.
+
+Note that you also need Android SDK 28 for it to work, and I recommend updating Cordova and ionic as well.
