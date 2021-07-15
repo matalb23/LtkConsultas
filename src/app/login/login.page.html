@@ -7,15 +7,14 @@
 <ion-content>
 
 </ion-content> -->
-
-<ion-content class="base" >
-  <div class="bg-login parallax">
+<ion-content> <!--class="base"-->
+  <div style="background-color:#0d1b34;height: 100%;"> <!-- CONTENEDOR DE FORMULARIO class="bg-login parallax" -->
     <form #form="ngForm" (ngSubmit)="login(form)">
-      <ion-grid>
+      <ion-grid style="width: 90%;">
         <ion-row color="primary" justify-content-center>
           <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
               <p class="logo1 animated fadeInDown" style="text-align: center;">
-                  <!-- <a href="#"><img src="../../assets/img/logo.png" width="150"></a> -->
+                <a href="#"><img src="../../assets/logo-consultas.png" width="150"></a> 
               </p> 
             <div padding>
               <ion-item style="padding-top: 20px; background: none !important">
@@ -27,7 +26,8 @@
             </div>
         
             <div padding style="text-align: center;">
-              <button size="large" type="submit" [disabled]="form.invalid" expand="block" class="btn-login">INGRESAR</button>
+              <br>
+              <button size="large" type="submit" [disabled]="form.invalid" expand="block" class="btn-cyan">INGRESAR</button>
               
               <br>
               
@@ -44,4 +44,3 @@
     </form>
   </div>
   </ion-content>
-  

@@ -1,17 +1,39 @@
+<!-- // CABECERA \\ -->
 <ion-header>
-  <ion-toolbar>
-    <ion-title>desglose</ion-title>
+  <ion-toolbar color="primary">
+    <div class="cabecera-div">
+    <div style="width: 10%; float: left;">
+      <ion-icon name="chevron-back-circle-outline" class="icon-back" ></ion-icon>  <!-- ICONO VOLVER -->
+    </div>
+    <div style="width: 90%; float: left;">
+    <ion-title>
+      <p class="txt-small-cab1">Bienvenido a LTK Consultas</p>
+      <p class="txt-small-cab2">Hola <strong>{{usuarioNombre}}</strong>!</p>
+    </ion-title>
+  </div>
+</div>
   </ion-toolbar>
 </ion-header>
-
+<!-- \\ CABECERA // -->
+<!-- // CUERPO \\ -->
 <ion-content>
+  <ion-title class="titulos">DESGLOSE </ion-title> <!-- TITULOS -->
   <ion-grid>
-    <ion-row *ngFor="let row of desglose ; let i = index " >      
-    
-      <ion-col *ngFor="let col of row | keyvalue ">
-        <ion-label position="floating">{{col.key}}</ion-label>:
-        <ion-label position="floating">{{col.value}}</ion-label>
+    <ion-row *ngFor="let row of desglose ; let i = index ">      
+      <ion-col  style="font-size: 11px; text-align: left;border: 0px;">
+      <div *ngFor="let col of row | keyvalue "  style="border-bottom: 1px solid #d7d8da; padding: 3px 0px; ">
+        <ion-label style="padding: 2px; text-transform: uppercase; font-weight: 800; font-size: 9px;">{{col.key}} :</ion-label>
+        <ion-label >{{col.value}}</ion-label>
+      </div>
       </ion-col>        
   </ion-row>
   </ion-grid> 
 </ion-content>
+<!-- \\ CUERPO // -->
+<!-- // FOOTER \\ -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="font-size: 10px; text-align: center;">Desarollado por Latika IT</ion-title>
+  </ion-toolbar>
+</ion-footer>
+<!-- \\ FOOTER // -->

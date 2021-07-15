@@ -1,20 +1,43 @@
+<!-- // CABECERA \\ -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <div class="cabecera-div">
+    <div style="width: 10%; float: left;">
+      <ion-icon name="chevron-back-circle-outline" class="icon-back" ></ion-icon>  <!-- ICONO VOLVER -->
+    </div>
+    <div style="width: 90%; float: left;">
+    <ion-title>
+      <p class="txt-small-cab1">Bienvenido a LTK Consultas</p>
+      <p class="txt-small-cab2">Hola <strong>{{usuarioNombre}}</strong>!</p>
+    </ion-title>
+  </div>
+</div>
+  </ion-toolbar>
+</ion-header>
+<!-- \\ CABECERA // -->
+<!-- // CUERPO \\ -->
 <ion-content>
-  <ion-title>Consultas</ion-title>
-  <div  *ngFor="let consulta of consultas  " >    
-    <br> 
-     <button  (click)="irConsulta(consulta[0])" ><!-- ID -->
+  <ion-title class="titulos">CONSULTAS </ion-title> <!-- TITULOS -->
+  <div  *ngFor="let consulta of consultas  " class="ion-padding" >    
+    Éstas son tus consultas disponibles.  
+    <button class="btn-cyan txt-btn-ligth" (click)="irConsulta(consulta[0])" ><!-- ID -->
       {{consulta[1]}} <!-- NOMBRE -->
     </button> 
   </div> 
-<div *ngIf="links?.length > 0">
-    <ion-title>links</ion-title>
-    <div  *ngFor="let link of links" >    
-      <br> 
-          <button  (click)="irLink(link[2])" >
-        
-        {{link[1]}} 
+  <ion-title class="titulos">LINKS </ion-title> <!-- TITULOS -->
+  <div *ngIf="links?.length > 0" class="ion-padding">
+    <div  *ngFor="let link of links" > 
+      <button class="btn-cyan txt-btn-ligth" (click)="irLink(link[2])" >
+      {{link[1]}} 
       </button>  
     </div> 
   </div> 
-
 </ion-content>
+<!-- \\ CUERPO // -->
+<!-- // FOOTER \\ -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="font-size: 10px; text-align: center;">Desarollado por Latika IT</ion-title>
+  </ion-toolbar>
+</ion-footer>
+<!-- \\ FOOTER // -->

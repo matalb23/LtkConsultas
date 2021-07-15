@@ -1,38 +1,62 @@
-
-
+<!-- // CABECERA \\ -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <div class="cabecera-div">
+    <div style="width: 10%; float: left;">
+      <ion-icon name="chevron-back-circle-outline" class="icon-back" ></ion-icon>  <!-- ICONO VOLVER -->
+    </div>
+    <div style="width: 90%; float: left;">
+    <ion-title>
+      <p class="txt-small-cab1">Bienvenido a LTK Consultas</p>
+      <p class="txt-small-cab2">Hola <strong>{{usuarioNombre}}</strong>!</p>
+    </ion-title>
+  </div>
+</div>
+  </ion-toolbar>
+</ion-header>
+<!-- \\ CABECERA // -->
+<!-- // CUERPO \\ -->
 <ion-content>
-  <ion-title>Consultas</ion-title>
-  <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()" class="cuerpo">
+  <ion-title class="titulos">CONSULTAS </ion-title> <!-- TITULOS -->
+  <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()" class="ion-padding" style="background-color: #f6f7f9; border-bottom: 1px solid #cacaca;  padding-bottom: 0px;
+" >
     <div *ngFor="let form_elem of filtros">
       
-      <ion-label class="labels-template">{{form_elem[4]}}</ion-label>
-    <div [ngSwitch]="form_elem[2]">
-       <div *ngSwitchCase="'2'" style="margin-bottom: 15px;">
-        <input class="input-template" type="text" formControlName="{{form_elem[3]}}_{{form_elem[2]}}"/>
-      </div>
-      <div *ngSwitchCase="'1'" style="margin-bottom: 15px;">
-        <input class="input-template" type="number" formControlName="{{form_elem[3]}}_{{form_elem[2]}}"/>
-       </div> 
-    </div>  
+      <div [ngSwitch]="form_elem[2]"> 
+        <div *ngSwitchCase="'2'" style="margin-bottom: 15px;">
+          <input class="input-template input-consultas" type="text" formControlName="{{form_elem[3]}}_{{form_elem[2]}}" placeholder="{{form_elem[4]}}"/>
+        </div>
+        <div *ngSwitchCase="'1'" style="margin-bottom: 15px;">
+          <input class="input-template input-consultas" type="number" formControlName="{{form_elem[3]}}_{{form_elem[2]}}" placeholder="{{form_elem[4]}}"/>
+        </div> 
+      </div>  
     </div>
-    <input type="submit" class="" value="Actualizar"/>
+    <input type="submit" class="btn-cyan txt-btn-ligth no-border" value="ACTUALIZAR"/>
     <br/>
     <br/>
-  </form>
-    <ion-grid>
-    <ion-row *ngFor="let row of select.datos ; let i = index " >      
-      <ion-col *ngFor="let col of row | keyvalue ">
-        <ion-label position="floating">{{col.key}}</ion-label>:
-        <ion-label position="floating">{{col.value}}</ion-label>
-      </ion-col>        
-      <div *ngIf="select.columnaDesglose!=''">        
-        <ion-col>
-        <button ion-button (click) ="desglose(select.columnaDesglose,row[select.columnaDesglose]);"  >
-        Desglose
-        </button>
-      </ion-col>
-      </div>
-
-  </ion-row>
-  </ion-grid>   
+  </form>     
+       
+  <ion-grid>
+    <ion-row *ngFor="let row of select.datos ; let i = index " class="row-consultas" >      
+      <ion-col style="font-size: 11px; text-align: left;border: 0px;"> 
+        <div *ngFor="let col of row | keyvalue " style="border-bottom: 1px solid #d7d8da; padding: 3px 0px; ">
+          <ion-label style="padding: 2px; text-transform: uppercase; font-weight: 800; font-size: 9px;">{{col.key}} :</ion-label>
+          <ion-label >{{col.value}}</ion-label>
+        </div>  
+        <div *ngIf="select.columnaDesglose!=''" >     
+          <button ion-button (click) ="desglose(select.columnaDesglose,row[select.columnaDesglose]);" class="btn-grey-small txt-small-cab1"  >
+          DESGLOSE
+          </button>
+      </div>      
+      </ion-col>  
+    </ion-row>
+  </ion-grid>  
 </ion-content>
+<!-- \\ CUERPO // -->
+<!-- // FOOTER \\ -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="font-size: 10px; text-align: center;">Desarollado por Latika IT</ion-title>
+  </ion-toolbar>
+</ion-footer>
+<!-- \\ FOOTER // -->
