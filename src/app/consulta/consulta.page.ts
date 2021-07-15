@@ -29,7 +29,7 @@ export class ConsultaPage implements OnInit {
   constructor(private  router:  Router,private api: ApiService,private storage:StorageService,private formBuilder: FormBuilder,private toastCtrl: ToastController) { }
   filtros: any ;
   ngOnInit() {
-
+    this.usuarioNombre=this.storage.getVariable(this.storage.TipoVariable.UserName);
     let group={};
     this.filtros=JSON.parse(this.storage.getVariable(this.storage.TipoVariable.ConsultaFiltrosActual));
     console.log(this.filtros);
