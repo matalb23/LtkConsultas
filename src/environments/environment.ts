@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
-  LtkConsultas_Url:"http://www.mdnet.com.ar:9999/scriptcase/app/Ltk_Consultas2/service/index.php",
-  //LtkConsultas_Url:"http://w260066.ferozo.com/ltkconsultas/service/index.php",
-  //LtkConsultas_Url:"service/index.php",
+  // LtkConsultas_Url:"http://www.mdnet.com.ar:9999/scriptcase/app/Ltk_Consultas2/service/index.php",
+    LtkConsultas_Url:"http://consultas.latikait.com.ar/service/index.php",
   LtkConsultas_Key:"Mds749194$"
 };
 
