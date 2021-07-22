@@ -42,7 +42,7 @@
   <ion-grid>
     <ion-row *ngFor="let row of select.datos ; let i = index " class="row-consultas" >      
       <ion-col style="font-size: 11px; text-align: left;border: 0px;"> 
-        <div *ngFor="let col of row | keyvalue " style="border-bottom: 1px solid #d7d8da; padding: 3px 0px; ">
+        <div *ngFor="let col of row | keyvalue:sortNull  " style="border-bottom: 1px solid #d7d8da; padding: 3px 0px; ">
           <ion-label style="padding: 2px; text-transform: uppercase; font-weight: 800; font-size: 9px;">{{col.key}} :</ion-label>
           <ion-label >{{col.value}}</ion-label>
         </div>  
