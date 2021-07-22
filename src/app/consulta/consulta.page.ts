@@ -88,7 +88,7 @@ this.presentErrorToast("No hay mas datos para " + columna +" = "+codigo );
     toast.present();
          
 }    
-   
+sortNull() {}
   onSubmit(){
 
 

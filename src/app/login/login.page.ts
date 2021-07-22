@@ -54,7 +54,7 @@ export class LoginPage implements OnInit {
 
   }
   iraregistrar() {
-    this.router.navigateByUrl('register');
+    this.router.navigateByUrl("https://latikait.com/ltkconsultas/");
   }
   async presentErrorToast(msg) {
     const toast = await this.toastCtrl.create({
