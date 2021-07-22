@@ -7,6 +7,7 @@ Pass="PASS",
 Propietario="PROPIETARIO",
 ConexionActual="CONEXIONACTUAL",
 ConsultaActual="CONSULTAACTUAL",
+ConsultaActualNombre="CONSULTAACTUALNOMBRE",
 ConsultaFiltrosActual="CONSULTAFILTROSACTUAL",
 DatosDesglose="DATOS_DESGLOSE"
 }

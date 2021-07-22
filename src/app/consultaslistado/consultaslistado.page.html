@@ -24,7 +24,7 @@
   Éstas son tus consultas disponibles.  
   <div  *ngFor="let consulta of consultas  " class="ion-padding" >    
   
-    <button class="btn-cyan txt-btn-ligth" (click)="irConsulta(consulta[0])" ><!-- ID -->
+    <button class="btn-cyan txt-btn-ligth" (click)="irConsulta(consulta[0],consulta[1])" ><!-- ID -->
       {{consulta[1]}} <!-- NOMBRE -->
     </button> 
   </div> 

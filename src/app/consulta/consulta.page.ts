@@ -25,11 +25,12 @@ export class ConsultaPage implements OnInit {
   myFormGroup:FormGroup;
   acceso=this.storage.getVariable(this.storage.TipoVariable.UserId);
   usuarioNombre;
-
+consultaNombre;
   constructor(private  router:  Router,private api: ApiService,private storage:StorageService,private formBuilder: FormBuilder,private toastCtrl: ToastController) { }
   filtros: any ;
   ngOnInit() {
-    this.usuarioNombre=this.storage.getVariable(this.storage.TipoVariable.UserName);
+    this.usuarioNombre=this.storage.getVariable(this.storage.TipoVariable.UserName);    
+    this.consultaNombre=this.storage.getVariable(this.storage.TipoVariable.ConsultaActualNombre);
     let group={};
     this.filtros=JSON.parse(this.storage.getVariable(this.storage.TipoVariable.ConsultaFiltrosActual));
     console.log(this.filtros);
@@ -88,7 +89,7 @@ this.presentErrorToast("No hay mas datos para " + columna +" = "+codigo );
     toast.present();
          
 }    
-sortNull() {}
+sortNull() {}//para que tome el orden default
   onSubmit(){
 
 

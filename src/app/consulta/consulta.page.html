@@ -20,7 +20,7 @@
 <!-- \\ CABECERA // -->
 <!-- // CUERPO \\ -->
 <ion-content>
-  <ion-title class="titulos">CONSULTAS </ion-title> <!-- TITULOS -->
+  <ion-title class="titulos">{{consultaNombre}}</ion-title> <!-- TITULOS -->
   <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()" class="ion-padding" style="background-color: #f6f7f9; border-bottom: 1px solid #cacaca;  padding-bottom: 0px;
 " >
     <div *ngFor="let form_elem of filtros">

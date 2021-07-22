@@ -39,7 +39,7 @@ this.consultas= JSON.parse(res);
   }
 
   // conexionLinks
-  irConsulta(id){
+  irConsulta(id,nombre){
 
     var request={
       "request":"consultaFiltros"
@@ -51,6 +51,7 @@ console.log(res);
 
 this.storage.setVariable(this.storage.TipoVariable.ConsultaFiltrosActual,res);
 this.storage.setVariable(this.storage.TipoVariable.ConsultaActual,id);
+this.storage.setVariable(this.storage.TipoVariable.ConsultaActualNombre,nombre);
 console.log("consulta "+id);
 this.router.navigateByUrl('consulta');
 
