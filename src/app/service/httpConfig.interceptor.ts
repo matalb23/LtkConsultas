@@ -10,12 +10,13 @@ import {
   import { Observable, throwError } from 'rxjs';
   import { map, catchError } from 'rxjs/operators';
   import { Injectable } from '@angular/core';
-  
+  import { LoadingController,ToastController  } from '@ionic/angular';
   
   @Injectable()
   export class HttpConfigInterceptor implements HttpInterceptor {
-    
-    constructor() { }
+    isLoading: boolean = false;
+    constructor(public loadingCtrl: LoadingController,
+      private toastCtrl: ToastController,) { }
   
   
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -58,6 +59,7 @@ import {
         
       //  request = request.clone({ headers: request.headers.set('Access-Control-Allow-Headers', 'Content-Type') }); //application/json
          //request = request.clone({ headers: request.headers.set('Content-Type', 'application/json') }); //application/json
+         this.presentLoading();
          request = request.clone({ headers: request.headers.set('Content-Type', 'application/json,application/x-www-form-urlencoded header') }); //application/json
          
         // request = request.clone({ headers: request.headers.set('Access-Control-Allow-Methods', 'GET,POST,OPTIONS') });
@@ -74,9 +76,39 @@ import {
             newReq = request.clone({
               responseType: 'text' as 'json'
             });
-        //  console.log("request"+newReq)
-            return next.handle(newReq)
+        
+          // return next.handle(newReq)
+        return next.handle(newReq).pipe(
+          map((event: HttpEvent<any>) => {
+            if (event instanceof HttpResponse) {              
+              this.dismissLoading();
+            }
+            return event;
+          }),
+          catchError((error: HttpErrorResponse) => {
+            console.error(error);            
+            this.dismissLoading();          
+            return throwError(error);
+          })
+        ); 
     }
   
-  
+    async presentLoading() {
+      this.isLoading = true;
+      return await this.loadingCtrl.create({
+        duration: 3000,
+      }).then(a => {
+        a.present().then(() => {
+          if (!this.isLoading) {
+            a.dismiss().then(() => console.log());
+          }
+        });
+      });
+    }
+    // Cierre del loading
+    async dismissLoading() {
+      this.isLoading = false;
+      return await this.loadingCtrl.dismiss().then(() => 
+      null);//console.log('dismissLoading')
+    }  
   }
