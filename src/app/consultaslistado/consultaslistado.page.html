@@ -21,9 +21,9 @@
 <!-- // CUERPO \\ -->
 <ion-content>
   <ion-title class="titulos">CONSULTAS </ion-title> <!-- TITULOS -->
-  Éstas son tus consultas disponibles.  
+   
   <div  *ngFor="let consulta of consultas  " class="ion-padding" >    
-  
+    Éstas son tus consultas disponibles. 
     <button class="btn-cyan txt-btn-ligth" (click)="irConsulta(consulta[0],consulta[1])" ><!-- ID -->
       {{consulta[1]}} <!-- NOMBRE -->
     </button> 
