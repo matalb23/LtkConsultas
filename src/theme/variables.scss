@@ -76,6 +76,22 @@ body {
 .no-border {
   border: 0px solid #fff !important;
 }
+
+/* --- OPEN IOS --- DAMIAN --- */
+.ios .titulos {
+    background: none;
+    height: 50px;
+    text-align: left;
+    position: -webkit-sticky;
+    background: #e0e3ea;
+    z-index: 999999;
+  }
+.ios .login-form {
+    position: relative;
+    top: 50px;
+  }
+/* --- CLOSE IOS --- DAMIAN --- */
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/

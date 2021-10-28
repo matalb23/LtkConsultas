@@ -7,7 +7,7 @@
   "proxies": [
     {
       "path": "/service",
-      "proxyUrl": "http://w260066.ferozo.com/ltkconsultas/service"
+      "proxyUrl": "http//consultas.latikait.com.ar/service"
     }
   ]
 }
