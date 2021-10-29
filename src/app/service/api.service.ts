@@ -1,45 +1,44 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+//import { HttpHeaders, HttpClient } from '@angular/common/http'; /*SI ES NECESARIO WEB descomentar*/
+import { HTTP } from '@ionic-native/http/ngx';
 
 import {environment} from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
-//const cabecera = {headers: new HttpHeaders({'Authorization': 'Key=AIzaSyBvWq6NtYcPUvp7le-t6m2QOMGadOHqAgM'})};
-const cabecera = {headers: new HttpHeaders({'Authorization': 'Key=AIzaSyBvWq6NtYcPUvp7le-t6m2QOMGadOHqAgM'
-//,'Access-Control-Max-Age':'1728000'
-,'Access-Control-Allow-Origin' : 'http://consultas.latikait.com.ar'
-//,'Access-Control-Allow-Headers' : 'Content-Type,Authorization'
+/*SI ES NECESARIO WEB descomentar*/
+//commentado20211029 const cabecera = {headers: new HttpHeaders({'Authorization': 'Key=AIzaSyBvWq6NtYcPUvp7le-t6m2QOMGadOHqAgM'
+//commentado20211029 })};
 
-})};
-
-
-// ,
-// 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
-// 'Accept':'application/json',
-// 'content-type':'application/json'
-
-// var headers = new Headers();
-// headers.append('Access-Control-Allow-Origin' , '*');
-// headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
-// headers.append('Accept','application/json');
-// headers.append('content-type','application/json');
-//  let options = new RequestOptions({ headers:headers,withCredentials: true});
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   url = environment.LtkConsultas_Url; 
-
-  constructor(private httpClient: HttpClient) { }
-  public sendPost(usuario: any): Observable<any> {
+  //constructor(private httpClient: HttpClient) { }/*SI ES NECESARIO WEB descomentar*/
+  constructor(private http: HTTP) { }
+  public sendPost(usuario: any) {
   
-    //return this.httpClient.post<any>(this.url , usuario, cabecera);
-    return this.httpClient.post<any>(this.url , usuario, cabecera);
+    const httpHeader = {
+      'Content-Type':  'application/json',
+      'Authorization':'Key=AIzaSyBvWq6NtYcPUvp7le-t6m2QOMGadOHqAgM'
+    };
+    
+    
+    this.http.setDataSerializer('json');
+    return this.http.post(this.url , usuario,httpHeader)
+    .then(response=>{
+          return response.data;
+    })
+    
+    ;
   }
-  // public conexiones(acceso: any): Observable<any> {
-  //   return this.httpClient.post<any>(this.url , acceso, cabecera);
-  // }
+  /*SI ES NECESARIO WEB descomentar*/
+  /* Cambiar then por suscribe
+  public sendPost(usuario: any): Observable<any> {
+    return this.httpClient.post<any>(this.url , usuario, cabecera);
+  }*/
+  
 }

@@ -6,8 +6,8 @@
   "type": "angular",
   "proxies": [
     {
-      "path": "/service",
-      "proxyUrl": "http//consultas.latikait.com.ar/service"
+      "path": "*/service",
+      "proxyUrl": "http://consultas.latikait.com.ar/service"
     }
   ]
 }

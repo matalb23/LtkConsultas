@@ -26,7 +26,7 @@ console.log("AppComponent");
 
         console.log("user AppComponent",user);
 
-        this.api.sendPost(user).subscribe((res) => {
+        this.api.sendPost(user).then((res) => {
 
           var respuesta = JSON.parse(res);
           console.log("respuesta",respuesta)

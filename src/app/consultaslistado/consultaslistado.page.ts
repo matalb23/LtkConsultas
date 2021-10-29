@@ -25,7 +25,7 @@ export class ConsultaslistadoPage implements OnInit {
       ,"conexion":this.storage.getVariable(this.storage.TipoVariable.ConexionActual)      
     } ;
    
-    this.api.sendPost(request).subscribe((res)=>{     
+    this.api.sendPost(request).then((res)=>{     
 
 this.consultas= JSON.parse(res);
 
@@ -46,7 +46,7 @@ this.consultas= JSON.parse(res);
       ,"consulta":id      
     } ;
    
-    this.api.sendPost(request).subscribe((res)=>{     
+    this.api.sendPost(request).then((res)=>{     
 console.log(res);
 
 this.storage.setVariable(this.storage.TipoVariable.ConsultaFiltrosActual,res);
@@ -74,7 +74,7 @@ this.router.navigateByUrl('consulta');
       ,"conexion":this.storage.getVariable(this.storage.TipoVariable.ConexionActual)      
     } ;
    
-    this.api.sendPost(request).subscribe((res)=>{     
+    this.api.sendPost(request).then((res)=>{     
 
 this.links= JSON.parse(res);
 
