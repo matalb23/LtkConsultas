@@ -9,7 +9,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 //const cabecera = {headers: new HttpHeaders({'Authorization': 'Key=AIzaSyBvWq6NtYcPUvp7le-t6m2QOMGadOHqAgM'})};
 const cabecera = {headers: new HttpHeaders({'Authorization': 'Key=AIzaSyBvWq6NtYcPUvp7le-t6m2QOMGadOHqAgM'
 //,'Access-Control-Max-Age':'1728000'
-//,'Access-Control-Allow-Origin' : '*'
+,'Access-Control-Allow-Origin' : 'http://consultas.latikait.com.ar'
 //,'Access-Control-Allow-Headers' : 'Content-Type,Authorization'
 
 })};

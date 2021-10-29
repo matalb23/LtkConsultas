@@ -32,7 +32,7 @@ npm run build
 npx cap sync
 npx cap open android
 
-ESTE ME FUNCIONA
+ESTE ME FUNCIONAln
 ionic capacitor run android -l --external 
 
 

@@ -1,0 +1,6 @@
+  sudo gem install cocoapods
+  pod repo update
+ xcode-select --install
+ionic capacitor run ios -l --external 
+
+ls y cd
