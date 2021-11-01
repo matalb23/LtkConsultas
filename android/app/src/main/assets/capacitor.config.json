@@ -6,7 +6,6 @@
 	"server": {
 		"allowNavigation": [],
 		"cleartext": true,
-		"androidScheme": "http",
-		"url": "http://192.168.0.7:8100"
+		"androidScheme": "http"
 	}
 }

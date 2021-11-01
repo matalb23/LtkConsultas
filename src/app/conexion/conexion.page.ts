@@ -5,6 +5,7 @@ import {StorageService} from "../service/storage.service";
 import {ApiService} from '../../app/service/api.service';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { Browser } from '@capacitor/browser';
+//import { ConsoleReporter } from 'jasmine';
 @Component({
   selector: 'app-conexion',
   templateUrl: './conexion.page.html',
@@ -69,6 +70,12 @@ this.links= JSON.parse(res);
   }
 
 async irLink  (parurl){
+  if(parurl.includes("////")|| parurl.includes("\\\\"))
+  {
+
+    parurl=parurl.replace("////","//").replace("\\\\","\\")
+ }
+  console.log("url que va a navegar",parurl);
       await Browser.open({'url': parurl});   
 };
 
