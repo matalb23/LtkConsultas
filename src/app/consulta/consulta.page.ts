@@ -55,7 +55,7 @@ ViewDidEnter(){
       ,"codigoDesglose":codigo
     } ;
     let desgloseDatos=[];
-    this.api.sendPost(request).subscribe((res)=>{     
+    this.api.sendPost(request).then((res)=>{     
       
       desgloseDatos= JSON.parse(res);
 
@@ -111,7 +111,7 @@ sortNull() {}//para que tome el orden default
 
 
  
-  this.api.sendPost(request).subscribe((res)=>{     
+  this.api.sendPost(request).then((res)=>{     
     
     console.log(res);
     

@@ -28,7 +28,7 @@ export class ConexionPage implements OnInit {
       ,"acceso":this.storage.getVariable(this.storage.TipoVariable.UserId)      
     } ;
    
-    this.api.sendPost(request).subscribe((res)=>{     
+    this.api.sendPost(request).then((res)=>{     
     this.conexiones= JSON.parse(res);
     }
     ,error=>{
@@ -55,7 +55,7 @@ export class ConexionPage implements OnInit {
       ,"conexion":null//this.storage.getVariable(this.storage.TipoVariable.ConexionActual)      
     } ;
    
-    this.api.sendPost(request).subscribe((res)=>{     
+    this.api.sendPost(request).then((res)=>{     
 
 this.links= JSON.parse(res);
 

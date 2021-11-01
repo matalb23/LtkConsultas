@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
 
     console.log(user);
 
-    this.api.sendPost(user).subscribe((res) => {
+    this.api.sendPost(user).then((res) => {
 
       var respuesta = JSON.parse(res);
       if (respuesta.status == 200) {
