@@ -88,9 +88,16 @@ this.links= JSON.parse(res);
   }
 
   async irLink  (parurl){
+    if(parurl.includes("////")|| parurl.includes("\\\\"))
+    {
+  
+      parurl=parurl.replace("////","//").replace("\\\\","\\")
+   }
+    console.log("url que va a navegar",parurl);
         await Browser.open({'url': parurl});   
   };
-
+  
+  
   ionViewDidEnter(){
     this.usuarioNombre=this.storage.getVariable(this.storage.TipoVariable.UserName);
       this.getConsultas();
