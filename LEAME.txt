@@ -77,3 +77,6 @@ Also, if you're still using the original firebase plugin you should replace it w
 And cordova clean android then rebuild.
 
 Note that you also need Android SDK 28 for it to work, and I recommend updating Cordova and ionic as well.
+
+20211103
+Cambiamos com.latikait.listados.mobile(no teniamos la keystore)  por  com.latikait.ltkconsultas 
