@@ -29,7 +29,7 @@ It will install latest v3, which it’s RC.0 at the moment, so beta 3 is very ol
 
 
 npm run build
-npx cap sync
+npx cap sync android
 npx cap open android
 
 ESTE ME FUNCIONAln
