@@ -20,8 +20,9 @@
 <!-- \\ CABECERA // -->
 <!-- // CUERPO \\ -->
 <ion-content>
-  <ion-title class="titulos">CONEXIONES </ion-title> <!-- TITULOS -->
+  
   <div *ngIf="conexiones?.length > 0" class="ion-padding"> 
+  <ion-title class="titulos">CONEXIONES </ion-title> <!-- TITULOS -->
   Éstas son tus conexiones disponibles. 
     <div  *ngFor="let conexion of conexiones  " >
       <button class="btn-cyan txt-btn-ligth" (click)="irConsultas(conexion[0])" ><!-- ID -->
@@ -31,6 +32,7 @@
   </div> 
   <!--<ion-title class="titulos">LINKS </ion-title>-->
   <div *ngIf="links?.length > 0" class="ion-padding">
+    <ion-title class="titulos">LINKS </ion-title> <!-- TITULOS -->
     <div  *ngFor="let link of links" > 
       <button  class="btn-cyan txt-btn-ligth" (click)="irLink(link[2])" >
         {{link[1]}} 

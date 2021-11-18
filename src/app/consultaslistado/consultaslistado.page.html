@@ -2,40 +2,43 @@
 <ion-header>
   <ion-toolbar color="primary">
     <div class="cabecera-div">
-    <div style="width: 10%; float: left;">
-      <ion-item-option routerLink="/conexion" routerDirection="forward"  >
-        <ion-icon  name="chevron-back-circle-outline" class="icon-back" >          
-        </ion-icon> 
-      </ion-item-option>
+      <div style="width: 10%; float: left;">
+        <ion-item-option routerLink="/conexion" routerDirection="forward">
+          <ion-icon name="chevron-back-circle-outline" class="icon-back">
+          </ion-icon>
+        </ion-item-option>
+      </div>
+      <div style="width: 90%; float: left;">
+        <ion-title>
+          <p class="txt-small-cab1">Bienvenido a LTK Consultas</p>
+          <p class="txt-small-cab2">Hola <strong>{{usuarioNombre}}</strong>!</p>
+        </ion-title>
+      </div>
     </div>
-    <div style="width: 90%; float: left;">
-    <ion-title>
-      <p class="txt-small-cab1">Bienvenido a LTK Consultas</p>
-      <p class="txt-small-cab2">Hola <strong>{{usuarioNombre}}</strong>!</p>
-    </ion-title>
-  </div>
-</div>
   </ion-toolbar>
 </ion-header>
 <!-- \\ CABECERA // -->
 <!-- // CUERPO \\ -->
 <ion-content>
-  <ion-title class="titulos">CONSULTAS </ion-title> <!-- TITULOS -->
-   
-  <div  *ngFor="let consulta of consultas  " class="ion-padding" >    
-    Éstas son tus consultas disponibles. 
-    <button class="btn-cyan txt-btn-ligth" (click)="irConsulta(consulta[0],consulta[1])" ><!-- ID -->
-      {{consulta[1]}} <!-- NOMBRE -->
-    </button> 
-  </div> 
-  <ion-title class="titulos">LINKS </ion-title> <!-- TITULOS -->
+  <div *ngIf="consultas?.length > 0" class="ion-padding">
+    <ion-title class="titulos">CONSULTAS </ion-title> <!-- TITULOS -->
+    Éstas son tus consultas disponibles.
+    <div *ngFor="let consulta of consultas  ">       <!--class="ion-padding"-->
+      <button class="btn-cyan txt-btn-ligth" (click)="irConsulta(consulta[0],consulta[1])">
+        <!-- ID -->
+        {{consulta[1]}}
+        <!-- NOMBRE -->
+      </button>
+    </div>
+  </div>
   <div *ngIf="links?.length > 0" class="ion-padding">
-    <div  *ngFor="let link of links" > 
-      <button class="btn-cyan txt-btn-ligth" (click)="irLink(link[2])" >
-      {{link[1]}} 
-      </button>  
-    </div> 
-  </div> 
+    <ion-title class="titulos">LINKS </ion-title> <!-- TITULOS -->
+    <div *ngFor="let link of links">
+      <button class="btn-cyan txt-btn-ligth" (click)="irLink(link[2])">
+        {{link[1]}}
+      </button>
+    </div>
+  </div>
 </ion-content>
 <!-- \\ CUERPO // -->
 <!-- // FOOTER \\ -->

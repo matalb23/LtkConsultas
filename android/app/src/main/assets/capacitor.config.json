@@ -1,11 +1,12 @@
 {
-	"appId": "com.latikait.listados.mobile",
+	"appId": "com.latikait.ltkconsultas",
 	"appName": "LtkConsultas",
 	"webDir": "www",
 	"bundledWebRuntime": false,
 	"server": {
 		"allowNavigation": [],
 		"cleartext": true,
-		"androidScheme": "http"
+		"androidScheme": "http",
+		"url": "http://192.168.0.7:8100"
 	}
 }
