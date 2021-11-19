@@ -56,7 +56,8 @@ electron-packager <sourcedir> <appname> --platform=win32 --arch=x86_64
 
 
 
-
+npm run androidl 
+npm run iosrun
 
 delete node_modules folder
 delete platforms folder

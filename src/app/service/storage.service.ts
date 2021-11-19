@@ -9,7 +9,8 @@ ConexionActual="CONEXIONACTUAL",
 ConsultaActual="CONSULTAACTUAL",
 ConsultaActualNombre="CONSULTAACTUALNOMBRE",
 ConsultaFiltrosActual="CONSULTAFILTROSACTUAL",
-DatosDesglose="DATOS_DESGLOSE"
+DatosDesglose="DATOS_DESGLOSE",
+DesgloseTitulo="Titulo_DESGLOSE"
 }
 @Injectable({
   providedIn: 'root'

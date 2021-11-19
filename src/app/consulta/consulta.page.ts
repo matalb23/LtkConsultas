@@ -47,7 +47,7 @@ ViewDidEnter(){
     this.usuarioNombre=this.storage.getVariable(this.storage.TipoVariable.UserName);
 
    }
-   desglose(columna,codigo){
+   desglose(columna,codigo,desgloseTitulo){
 
     var request={
       "request":"consultaDesglose"
@@ -60,6 +60,7 @@ ViewDidEnter(){
       desgloseDatos= JSON.parse(res);
 
 if(desgloseDatos.length>0){
+this.storage.setVariable(this.storage.TipoVariable.DesgloseTitulo,desgloseTitulo);
 this.storage.setVariable(this.storage.TipoVariable.DatosDesglose,res);
 this.router.navigateByUrl('desglose');
 }else{
