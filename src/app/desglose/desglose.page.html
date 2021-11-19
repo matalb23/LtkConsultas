@@ -22,10 +22,13 @@
 <ion-content>
   <ion-title class="titulos">DESGLOSE </ion-title> <!-- TITULOS -->
   <ion-grid>
-    <ion-row *ngFor="let row of desglose ; let i = index ">      
-      <ion-col  style="font-size: 11px; text-align: left;border: 0px;">
+    <!-- LO QUE PONGA ACÀ VA AL INICIO DEL DESGLOSE -->
+    <ion-row *ngFor="let row of desglose ; let i = index ">
+      <ion-col  style="font-size: 13px;font-weight: 800;color:#0d1b34; text-align: left;border-radius: 6px; border: 1px; border-color:#0d1b34; margin:8px;border-style: solid;box-shadow: 0px 0px 3px #e0e0e0;">
+      <!-- EL DIV DE ABAJO ES LA LINEA DE CADA ITEM DEL GRID -->
       <div *ngFor="let col of row | keyvalue "  style="border-bottom: 1px solid #d7d8da; padding: 3px 0px; ">
-        <ion-label style="padding: 2px; text-transform: uppercase; font-weight: 800; font-size: 9px;">{{col.key}} :</ion-label>
+        <!-- LO QUE PONGA ACÀ VA ADELANTE DEL LABEL DEL ITEM -->
+        <ion-label style="padding: 2px; text-transform: uppercase; font-weight: 400; font-size: 11px;">{{col.key}}:</ion-label>
         <ion-label >{{col.value}}</ion-label>
       </div>
       </ion-col>        
