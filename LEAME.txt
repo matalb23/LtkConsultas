@@ -81,3 +81,8 @@ Note that you also need Android SDK 28 for it to work, and I recommend updating 
 
 20211103
 Cambiamos com.latikait.listados.mobile(no teniamos la keystore)  por  com.latikait.ltkconsultas 
+
+
+20211210
+Subir version android
+android\app\build.gradle tocar la version
