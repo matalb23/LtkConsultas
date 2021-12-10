@@ -16,7 +16,7 @@ export class AppComponent {
 
 console.log("AppComponent");
     this.platform.ready().then(() => {
-     console.log("this.storage.getVariable(this.storage.TipoVariable.User", this.storage.getVariable(this.storage.TipoVariable.User) )
+     //console.log("this.storage.getVariable(this.storage.TipoVariable.User", this.storage.getVariable(this.storage.TipoVariable.User) )
       if (this.storage.getVariable(this.storage.TipoVariable.User) != "" || this.storage.getVariable(this.storage.TipoVariable.User) != null) {
         var user = {
           "request": "login"
@@ -31,6 +31,24 @@ console.log("AppComponent");
           var respuesta = JSON.parse(res);
           console.log("respuesta",respuesta)
           if (respuesta.status == 200) {
+            
+           // let userZoom=this.storage.getVariable(this.storage.TipoVariable.UserZoom);
+           //const userZoom:number=parseFloat( this.storage.getVariable(this.storage.TipoVariable.UserZoom));
+           let userZoom:number=0;
+           if(isNaN( this.storage.getVariable(this.storage.TipoVariable.UserZoom)))
+           { userZoom=0;}
+           else
+           { console.log("Entro a zooming") 
+           this.storage.zooming(this.storage.getVariable(this.storage.TipoVariable.UserZoom));
+          //  this.storage.sumAuto(this.storage.getVariable(this.storage.TipoVariable.UserZoom));
+          }
+
+           //var userZoom=this.storage.getVariable(this.storage.TipoVariable.UserZoom);
+           console.log("UserZoom_",userZoom)
+           //var userZoom=this.storage.getVariable(this.storage.TipoVariable.UserZoom);
+          
+             
+             
 
             this.router.navigateByUrl("conexion");
           }

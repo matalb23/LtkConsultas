@@ -22,7 +22,7 @@
 <ion-content>
   <div *ngIf="consultas?.length > 0" class="ion-padding">
     <ion-title class="titulos">CONSULTAS </ion-title> <!-- TITULOS -->
-    Éstas son tus consultas disponibles.
+    <p>Éstas son tus consultas disponibles.<p>
     <div *ngFor="let consulta of consultas  ">       <!--class="ion-padding"-->
       <button class="btn-cyan txt-btn-ligth" (click)="irConsulta(consulta[0],consulta[1])">
         <!-- ID -->

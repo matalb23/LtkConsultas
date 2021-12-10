@@ -131,4 +131,10 @@ console.log(JSON.parse(res).datos.length);
   ); 
 
 } 
+
+zooming(val)
+{
+  this.storage.zoomingAndSave(val);
+} 
+
 }

@@ -19,8 +19,11 @@ desglose=[];
   ionViewDidEnter(){
     this.desgloseTitulo=this.storage.getVariable(this.storage.TipoVariable.DesgloseTitulo);
     this.desglose=JSON.parse(this.storage.getVariable(this.storage.TipoVariable.DatosDesglose));
-    
-    // console.log(this.desglose);
-    
+
    }
+   zooming(val)
+   {
+     this.storage.zoomingAndSave(val);
+  } 
+
 }

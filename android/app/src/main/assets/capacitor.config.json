@@ -7,6 +7,7 @@
 		"allowNavigation": [],
 		"cleartext": true,
 		"androidScheme": "http",
-		"url": "http://10.0.0.248:8100"
+		"url": "http://10.0.0.248:8101",
+		"originalUrl": "http://10.0.0.248:8100"
 	}
 }

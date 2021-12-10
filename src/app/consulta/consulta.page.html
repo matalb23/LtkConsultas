@@ -43,9 +43,10 @@
   <ion-grid>
     <ion-row *ngFor="let row of select.datos ; let i = index " class="row-consultas"> <!-- class="row-consultas" -->      
       <ion-col style="font-size: 12px;color:#0d1b34; text-align: left;border: 0px;"> 
-        <div *ngFor="let col of row | keyvalue:sortNull  " style="border-bottom: 1px solid #0d1b34; padding: 3px 0px;margin:8px;">
-          <ion-label style="padding: 2px; text-transform: uppercase; font-weight: 400; font-size: 10px;">{{col.key}}:</ion-label>
-          <ion-label style="padding: 2px; text-transform: uppercase; font-size: 12px;font-weight: 800;">{{col.value}}</ion-label>
+        <div *ngFor="let col of row | keyvalue:sortNull  " style="border-bottom: 1px solid #cacaca; padding: 3px;margin:0px;">
+          <ion-label style="padding: 0px; text-transform: uppercase; font-weight: 400; font-size: 9px; line-height: 9px;">{{col.key}}: </ion-label>
+          <ion-label style="padding: 0px; text-transform: uppercase; font-size: 14px;font-weight: 800; line-height: 9px;">{{col.value}}</ion-label>
+          
         </div>  
         <div *ngIf="select.columnaDesglose!=''" >     
           <button ion-button (click) ="desglose(select.columnaDesglose,row[select.columnaDesglose],select.desgloseTitulo);" class="btn-grey-small txt-small-cab1"  >
@@ -55,13 +56,23 @@
       </ion-col>  
     </ion-row>
   </ion-grid>  
-        
+  
 </ion-content>
 <!-- \\ CUERPO // -->
 <!-- // FOOTER \\ -->
 <ion-footer>
+  
   <ion-toolbar>
-    <ion-title style="font-size: 10px; text-align: center;">Desarollado por Latika IT</ion-title>
+    <ion-text> 
+      <!--
+      <span style="font-size: 10px; text-align: left;">Desarollado por Latika IT</span>
+      -->
+      <p style="text-align:right; margin-right: 10px">
+        <ion-button (click)="zooming(-0.1)"><img src="../../assets/zoom-out.svg" width="20px"></ion-button>
+        <ion-button (click)="zooming(0.1)"><img src="../../assets/zoom-in.svg" width="20px"></ion-button>
+      </p>
+      
+    </ion-text>
   </ion-toolbar>
 </ion-footer>
 <!-- \\ FOOTER // -->

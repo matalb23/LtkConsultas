@@ -22,14 +22,14 @@
 <ion-content>
   <ion-title class="titulos">{{desgloseTitulo}} </ion-title> <!-- TITULOS -->
   <ion-grid>
-    <!-- LO QUE PONGA ACÀ VA AL INICIO DEL DESGLOSE -->
-    <ion-row *ngFor="let row of desglose ; let i = index ">
-      <ion-col  style="font-size: 13px;font-weight: 800;color:#0d1b34; text-align: left;border-radius: 6px; border: 1px; border-color:#0d1b34; margin:8px;border-style: solid;box-shadow: 0px 0px 3px #e0e0e0;">
+    <!-- LO QUE PONGA ACÀ VA AL INICIO DEL DESGLOSE  style="font-size: 13px;font-weight: 800;color:#0d1b34; text-align: left;border-radius: 6px; border: 1px; border-color:#0d1b34; margin:8px;border-style: solid;box-shadow: 0px 0px 3px #e0e0e0;"-->
+    <ion-row *ngFor="let row of desglose ; let i = index " class="row-consultas">
+      <ion-col  >
       <!-- EL DIV DE ABAJO ES LA LINEA DE CADA ITEM DEL GRID -->
       <div *ngFor="let col of row | keyvalue "  style="border-bottom: 1px solid #d7d8da; padding: 3px 0px; ">
         <!-- LO QUE PONGA ACÀ VA ADELANTE DEL LABEL DEL ITEM -->
-        <ion-label style="padding: 2px; text-transform: uppercase; font-weight: 400; font-size: 11px;">{{col.key}}:</ion-label>
-        <ion-label >{{col.value}}</ion-label>
+        <ion-label style="padding: 0px; text-transform: uppercase; font-weight: 400; font-size: 9px; line-height: 9px;">{{col.key}}:</ion-label>
+        <ion-label style="padding: 0px; text-transform: uppercase; font-size: 14px;font-weight: 800; line-height: 9px;">{{col.value}}</ion-label>
       </div>
       </ion-col>        
   </ion-row>
@@ -39,7 +39,16 @@
 <!-- // FOOTER \\ -->
 <ion-footer>
   <ion-toolbar>
-    <ion-title style="font-size: 10px; text-align: center;">Desarollado por Latika IT</ion-title>
+    <ion-text> 
+      <!--
+      <span style="font-size: 10px; text-align: left;">Desarollado por Latika IT</span>
+      -->
+      <p style="text-align:right; margin-right: 10px">
+        <ion-button (click)="zooming(-0.1)"><img src="../../assets/zoom-out.svg" width="20px"></ion-button>
+        <ion-button (click)="zooming(0.1)"><img src="../../assets/zoom-in.svg" width="20px"></ion-button>
+      </p>
+      
+    </ion-text>
   </ion-toolbar>
 </ion-footer>
 <!-- \\ FOOTER // -->
