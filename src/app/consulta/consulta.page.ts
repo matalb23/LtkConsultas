@@ -12,6 +12,7 @@ type RequestItem = {
  type Request = {
   request:string;
   consultaid:number
+  acceso:number
   items: RequestItem[] 
 }
 @Component({
@@ -98,6 +99,7 @@ sortNull() {}//para que tome el orden default
      let requestItems=<RequestItem>{};
      request.request="consultaSelect";
     request.consultaid=Number(this.storage.getVariable(this.storage.TipoVariable.ConsultaActual));
+    request.acceso=Number(this.storage.getVariable(this.storage.TipoVariable.UserId));
     
     request.items=new Array();
     for (let key in this.myFormGroup.controls) {

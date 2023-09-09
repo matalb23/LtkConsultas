@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "android": "npm run build && npx cap sync && npx cap open android",
+    "android": "npm run build && npx cap sync android && npx cap open android",
     "androidl": "npm run build && ionic capacitor run android -l --external ",
     "iosrun": "npm run build && npx cap sync ios && npx cap open ios"
   },
