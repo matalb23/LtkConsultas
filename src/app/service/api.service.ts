@@ -4,7 +4,7 @@ import { HTTP } from '@ionic-native/http/ngx';
 
 import {environment} from '../../environments/environment';
 import { Observable } from 'rxjs';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+// import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 /*SI ES NECESARIO WEB descomentar*/

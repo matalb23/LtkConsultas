@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { StorageService } from "../service/storage.service";
 
 import { ApiService } from '../../app/service/api.service';
-import { variable } from '@angular/compiler/src/output/output_ast';
+// import { variable } from '@angular/compiler/src/output/output_ast';
 import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-login',

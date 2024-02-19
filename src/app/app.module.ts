@@ -17,18 +17,15 @@ import {
 import { HttpConfigInterceptor } from '../app/service/httpConfig.interceptor';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],//HttpClientModule /*SI ES NECESARIO WEB descomentar e incluir en los imports*/
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },StorageService,HTTP,
-  
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpConfigInterceptor,
-      multi: true
-    }
-    
-  ],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+    providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, StorageService, HTTP,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: HttpConfigInterceptor,
+            multi: true
+        }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

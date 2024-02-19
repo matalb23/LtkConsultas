@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from  "@angular/router";
 import {StorageService} from "../service/storage.service";
-import {FormBuilder, FormGroup,FormControl, Validators  } from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup,UntypedFormControl, Validators  } from '@angular/forms';
 import {ApiService} from '../../app/service/api.service';
 import { ToastController  } from '@ionic/angular';
 type RequestItem = {
@@ -23,11 +23,11 @@ type RequestItem = {
 export class ConsultaPage implements OnInit {
   //consultaFiltros=[];
   select=[];
-  myFormGroup:FormGroup;
+  myFormGroup:UntypedFormGroup;
   acceso=this.storage.getVariable(this.storage.TipoVariable.UserId);
   usuarioNombre;
 consultaNombre;
-  constructor(private  router:  Router,private api: ApiService,private storage:StorageService,private formBuilder: FormBuilder,private toastCtrl: ToastController) { }
+  constructor(private  router:  Router,private api: ApiService,private storage:StorageService,private formBuilder: UntypedFormBuilder,private toastCtrl: ToastController) { }
   filtros: any ;
   ngOnInit() {
     this.usuarioNombre=this.storage.getVariable(this.storage.TipoVariable.UserName);    
@@ -38,10 +38,10 @@ consultaNombre;
     let name;
     this.filtros.forEach(input_template=>{
 name=input_template[3]+"_"+input_template[2];
-      group[name]=new FormControl('');  
+      group[name]=new UntypedFormControl('');  
    
     })
-    this.myFormGroup = new FormGroup(group);
+    this.myFormGroup = new UntypedFormGroup(group);
 
   }
 ViewDidEnter(){
@@ -55,6 +55,7 @@ ViewDidEnter(){
       ,"consultaid":this.storage.getVariable(this.storage.TipoVariable.ConsultaActual)
       ,"codigoDesglose":codigo
     } ;
+    console.log("Desglose",request);
     let desgloseDatos=[];
     this.api.sendPost(request).then((res)=>{     
       

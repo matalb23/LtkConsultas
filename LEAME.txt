@@ -86,3 +86,7 @@ Cambiamos com.latikait.listados.mobile(no teniamos la keystore)  por  com.latika
 20211210
 Subir version android
 android\app\build.gradle tocar la version
+
+
+npm install @capacitor/core@latest
+ionic capacitor add android
